@@ -6,7 +6,7 @@
 # PHP APP SPECIFIC
 #=================================================
 
-NODEJS_VERSION="16.15.0"
+NODEJS_VERSION="18.12.1"
 
 # dependencies used by the app
 pkg_dependencies="ffmpeg postgresql"
