@@ -6,7 +6,7 @@ It shall NOT be edited by hand.
 # Example app for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/calckey.svg)](https://dash.yunohost.org/appci/app/calckey) ![Working status](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)  
-[![Install Example app with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=calckey)
+[![Install calckey app with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=calckey)
 
 *[Lire ce readme en français.](./README_fr.md)*
 
