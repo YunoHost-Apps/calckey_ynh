@@ -1,25 +1,22 @@
 {
-    "name": "Example app",
-    "id": "example",
+    "name": "Calckey",
+    "id": "calckey",
     "packaging_format": 1,
     "description": {
-        "en": "Explain in *a few (10~15) words* the purpose of the app or what it actually does (it is meant to give a rough idea to users browsing a catalog of 100+ apps)",
-        "fr": "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+        "en": "A greatly enhanced fork of Misskey with better UI/UX, security, features, and more!",
+        "fr": "Un fork de Misskey grandement amélioré avec une meilleure interface utilisateur/UX, la sécurité, les fonctionnalités, et plus encore !"
     },
-    "version": "1.0~ynh1",
-    "url": "https://example.com",
+    "version": "13.0.5~ynh1",
+    "url": "https://i.calckey.cloud/",
     "upstream": {
-        "license": "free",
-        "website": "https://example.com",
-        "demo": "https://demo.example.com",
-        "admindoc": "https://yunohost.org/packaging_apps",
-        "userdoc": "https://yunohost.org/apps",
-        "code": "https://some.forge.com/example/example"
+        "license": "AGPL-3.0",
+        "website": "https://i.calckey.cloud/",
+        "demo": "https://i.calckey.cloud/",
+        "code": "https://codeberg.org/calckey/calckey"
     },
-    "license": "free",
+    "license": "AGPL-3.0",
     "maintainer": {
-        "name": "John doe",
-        "email": "john.doe@example.com"
+        "name": "oufmilo"
     },
     "requirements": {
         "yunohost": ">= 11.0.0"
@@ -27,8 +24,6 @@
     "multi_instance": true,
     "services": [
         "nginx",
-        "php7.4-fpm",
-        "mysql"
     ],
     "arguments": {
         "install": [
@@ -36,38 +31,15 @@
                 "name": "domain",
                 "type": "domain"
             },
-            {
-                "name": "path",
-                "type": "path",
-                "example": "/example",
-                "default": "/example"
-            },
+
             {
                 "name": "is_public",
                 "type": "boolean",
-                "default": true
-            },
-            {
-                "name": "language",
-                "type": "string",
-                "ask": {
-                    "en": "Choose the application language",
-                    "fr": "Choisissez la langue de l'application"
-                },
-                "choices": ["fr", "en"],
-                "default": "fr"
-            },
-            {
-                "name": "admin",
-                "type": "user"
-            },
-            {
-                "name": "password",
-                "type": "password",
                 "help": {
-                    "en": "Use the help field to add an information for the admin about this question.",
-                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
-                }
+                    "en": "If enabled, Calckey will be accessible by people who do not have an account. This can be changed later via the webadmin.",
+                    "fr": "Si cette case est cochée, Calckey sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
+                },
+                "default": true
             }
         ]
     }
