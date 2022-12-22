@@ -5,8 +5,8 @@ It shall NOT be edited by hand.
 
 # Exemple d'app pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/example.svg)](https://dash.yunohost.org/appci/app/example) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/example.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/example.maintain.svg)  
-[![Installer Example app avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=example)
+[![Niveau d'intégration](https://dash.yunohost.org/integration/calckey.svg)](https://dash.yunohost.org/appci/app/calckey) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)  
+[![Installer calckey app avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=calckey)
 
 *[Read this readme in english.](./README.md)*
 
@@ -32,7 +32,7 @@ Some long and extensive description of what the app is and does, lorem ipsum dol
 
 ## Captures d'écran
 
-![Capture d'écran de Example app](./doc/screenshots/example.jpg)
+![Capture d'écran de Example app](./doc/screenshots/screenshot-calckey.png)
 
 ## Avertissements / informations importantes
 
