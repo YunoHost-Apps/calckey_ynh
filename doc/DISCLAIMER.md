@@ -1,12 +1,19 @@
-* Any known limitations, constrains or stuff not working, such as (but not limited to):
-    * requiring a full dedicated domain ?
-    * architectures not supported ?
-    * not-working single-sign on or LDAP integration ?
-    * the app requires an important amount of RAM / disk / .. to install or to work properly
-    * etc...
+Important points to read before installing
 
-* Other infos that people should be aware of, such as:
-    * any specific step to perform after installing (such as manually finishing the install, specific admin credentials, ...)
-    * how to configure / administrate the application if it ain't obvious
-    * upgrade process / specificities / things to be aware of ?
-    * security considerations ?
+    Calckey requires a dedicated root domain, e.g. calckey.domain.tld
+    Due to Cypress dependency, Misskey only works on 64-bit CPU machines.
+    Calckey can take quite some time to install (more then 30 minutes). So take out some time and grab yourself a coffee.
+    If installing from command line, using screen is recommended to avoid disconnection. See below.
+    After installation, first page can take time to load and may show timeout error. Give it time to make itself ready for you. Refresh the page after 2 or 3 minutes.
+    The first account created will be an admin user and will have all the admin rights.
+
+Using screen in case of disconnects
+
+sudo apt-get install screen
+screen
+sudo yunohost app install https://github.com/YunoHost-Apps/calckey_ynh.git
+
+Recover after disconnect:
+
+screen -d
+screen -r
