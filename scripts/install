@@ -139,7 +139,8 @@ pushd "$final_path"
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn set version berry
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn plugin import workspace-tools
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn rebuild
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run rebuild
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run migrate
 popd
 
 #=================================================
