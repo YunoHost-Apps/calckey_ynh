@@ -10,6 +10,7 @@ WorkingDirectory=__FINALPATH__/
 Environment="PATH=__ENV_PATH__"
 Environment="NODE_ENV=production"
 ExecStart=/usr/bin/yarn start
+ExecStart=__YNH_NPM__ start
 TimeoutSec=60
 Restart=always
 
