@@ -1,5 +1,5 @@
 [Unit]
-Description=Calckey: A greatly enhanced fork of Misskey with better UI/UX, security, features, and more!
+Description=Calckey: fork of Misskey
 After=network.target
 
 [Service]
