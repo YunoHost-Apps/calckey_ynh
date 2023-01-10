@@ -24,7 +24,7 @@ A greatly enhanced fork of Misskey with better UI/UX, security, features, and mo
    
 
 
-**Shipped version:** 13.0.5~ynh1
+**Shipped version:** .12.119.0-calc.18~ynh1
 
 **Demo:** https://i.calckey.cloud/
 
