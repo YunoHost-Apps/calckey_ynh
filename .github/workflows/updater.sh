@@ -20,7 +20,8 @@
 current_version=$(cat manifest.json | jq -j '.version|split("~")[0]')
 repo=$(cat manifest.json | jq -j '.upstream.code|split("https://github.com/")[1]')
 # Some jq magic is needed, because the latest upstream release is not always the latest version (e.g. security patches for older versions)
-version=$(curl --silent "https://codeberg.org/api/v1/repos/calckey/calckey/releases" | jq -r '.[] | select( .prerelease != true ) | .tag_name' | sort -V | tail -1)
+latest_release_json=$(curl --silent "https://codeberg.org/api/v1/repos/calckey/calckey/releases" | jq -r '[.[] | select( .prerelease != true )][0]')
+version=$(echo $latest_release_json | jq -r '.tag_name')
 assets=$(echo $latest_release_json | jq -r '[ .tarball_url ] | join(" ") | @sh' | tr -d "'")
 
 # Later down the script, we assume the version has only digits and dots
