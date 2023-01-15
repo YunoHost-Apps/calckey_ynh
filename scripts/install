@@ -134,13 +134,15 @@ ynh_script_progression --message="Building app..." --weight=15
 
 pushd "$final_path"
 	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run clean-all
-	corepack enable
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn set version berry
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn plugin import workspace-tools
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run rebuild
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run migrate
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run clean-all
+	ynh_exec_warn_less ynh_exec_as $appcorepack enable
+	ynh_exec_warn_less ynh_exec_as $app corepack prepare pnpm@latest --activate
+	ynh_exec_warn_less ynh_exec_as $app pnpm i
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm set version berry
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm plugin import workspace-tools
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run rebuild
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run migrate
 popd
 
 #=================================================
