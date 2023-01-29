@@ -132,14 +132,11 @@ ynh_script_progression --message="Building app..." --weight=15
 
 pushd "$final_path"
 	ynh_use_nodejs
-	ynh_exec_warn_less corepack enable
-	ynh_exec_warn_less corepack prepare pnpm@latest --activate
-	ynh_exec_warn_less pnpm run clean-all
-	ynh_exec_warn_less pnpm set version berry
-	ynh_exec_warn_less pnpm plugin import workspace-tools
-	ynh_exec_warn_less pnpm install
-	ynh_exec_warn_less pnpm run rebuild
-	ynh_exec_warn_less pnpm run migrate
+	corepack enable
+	corepack prepare pnpm@latest --activate
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install --frozen-lockfile
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm build
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run init
 popd
 
 #=================================================
