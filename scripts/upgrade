@@ -136,10 +136,10 @@ ynh_add_nginx_config
 ynh_script_progression --message="Building app..."
 
 pushd "$final_path"
-    ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run rebuild
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run migrate
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm clean-all
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install --frozen-lockfile
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm build
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm migrate
 popd
 
 #=================================================
