@@ -5,15 +5,15 @@ It shall NOT be edited by hand.
 
 # Calckey pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/calckey.svg)](https://dash.yunohost.org/appci/app/calckey) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/calckey.svg)](https://dash.yunohost.org/appci/app/calckey) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)
 [![Installer Calckey avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=calckey)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Calckey rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Calckey rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Un fork grandement amélioré de Misskey avec une meilleure UI/UX, sécurité, fonctionnalités, et plus encore ! https://i.calckey.cloud/
 
@@ -26,9 +26,9 @@ Un fork grandement amélioré de Misskey avec une meilleure UI/UX, sécurité, f
 
 **Démo :** https://i.calckey.cloud/
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Calckey](./doc/screenshots/screenshot-calckey.png)
+![Capture d’écran de Calckey](./doc/screenshots/screenshot-calckey.png)
 
 ## Avertissements / informations importantes
 
@@ -56,8 +56,8 @@ screen -r
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://i.calckey.cloud/>
-* Dépôt de code officiel de l'app : <https://codeberg.org/calckey/calckey>
+* Site officiel de l’app : <https://i.calckey.cloud/>
+* Dépôt de code officiel de l’app : <https://codeberg.org/calckey/calckey>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_calckey>
 * Signaler un bug : <https://github.com/YunoHost-Apps/calckey_ynh/issues>
 
@@ -73,4 +73,4 @@ ou
 sudo yunohost app upgrade calckey -u https://github.com/YunoHost-Apps/calckey_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
