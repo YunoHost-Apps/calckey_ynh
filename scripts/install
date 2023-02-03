@@ -68,7 +68,7 @@ ynh_app_setting_set --app=$app --key=port --value=$port
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Installing dependencies..." --weight=3
+ynh_script_progression --message="Installing dependencies... This might take some time." --weight=3
 
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 
@@ -128,7 +128,7 @@ ynh_add_config --template="../conf/default.yml" --destination="$final_path/.conf
 #=================================================
 # BUILD APP
 #=================================================
-ynh_script_progression --message="Building app..." --weight=15
+ynh_script_progression --message="Building app... This will take some time." --weight=15
 
 pushd "$final_path"
 	ynh_use_nodejs
