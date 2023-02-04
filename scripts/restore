@@ -74,7 +74,12 @@ ynh_script_progression --message="Reinstalling dependencies..." --weight=5
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
 
-# enable pnpm again
+#=================================================
+# REINSTALL PNPM
+#=================================================
+ynh_script_progression --message="Reinstalling pnpm..." --weight=1
+
+# Define and install pnpm
 pushd "$final_path"
 	ynh_use_nodejs
 	corepack enable
