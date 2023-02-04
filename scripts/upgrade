@@ -138,9 +138,10 @@ pushd "$final_path"
     ynh_use_nodejs
     corepack enable
     corepack prepare pnpm@latest --activate
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm clean-all
     ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm i
     ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm run build
-    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm migrate
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm migrate
 popd
 
 #=================================================
