@@ -135,6 +135,7 @@ ynh_add_nginx_config
 ynh_script_progression --message="Building app..."
 
 pushd "$final_path"
+    corepack enable
     corepack prepare pnpm@latest --activate
     ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm clean-all
     ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
