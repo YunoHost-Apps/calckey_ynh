@@ -9,7 +9,7 @@ Group=__APP__
 WorkingDirectory=__FINALPATH__/
 Environment="__YNH_NODE_LOAD_PATH__"
 Environment="NODE_ENV=production"
-ExecStart=pnpm start
+ExecStart="/opt/node_n/n/versions/node/19.4.0/bin/pnpm start"
 TimeoutSec=60
 Restart=always
 
