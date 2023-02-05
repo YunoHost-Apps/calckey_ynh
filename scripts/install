@@ -74,8 +74,6 @@ ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 
 ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
 
-ynh_install_extra_app_dependencies --repo="deb https://dl.yarnpkg.com/debian/ stable main" --package="yarn" --key="https://dl.yarnpkg.com/debian/pubkey.gpg"
-
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
@@ -130,17 +128,15 @@ ynh_add_config --template="../conf/default.yml" --destination="$final_path/.conf
 #=================================================
 # BUILD APP
 #=================================================
-ynh_script_progression --message="Building app..." --weight=15
+ynh_script_progression --message="Building app..." --weight=20
 
 pushd "$final_path"
 	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run clean-all
 	corepack enable
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn set version berry
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn plugin import workspace-tools
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run rebuild
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run migrate
+	corepack prepare pnpm@latest --activate
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm i
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm run build
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm run init
 popd
 
 #=================================================
