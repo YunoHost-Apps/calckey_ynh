@@ -6,7 +6,7 @@
         "en": "Fork of Misskey with better UI/UX, security, features",
         "fr": "Un fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
     },
-    "version": "13.1.1~ynh1",
+    "version": "13.1.2~ynh1",
     "url": "https://i.calckey.cloud/",
     "upstream": {
         "license": "AGPL-3.0",
