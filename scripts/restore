@@ -73,7 +73,20 @@ ynh_script_progression --message="Reinstalling dependencies..." --weight=5
 # Define and install dependencies
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
-ynh_install_extra_app_dependencies --repo="deb https://dl.yarnpkg.com/debian/ stable main" --package="yarn" --key="https://dl.yarnpkg.com/debian/pubkey.gpg"
+
+#=================================================
+# REINSTALL PNPM
+#=================================================
+ynh_script_progression --message="Reinstalling pnpm..." --weight=1
+
+# Define and install pnpm
+pushd "$final_path"
+	ynh_use_nodejs
+	corepack enable
+	corepack prepare pnpm@latest --activate
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm build
+popd
 
 #=================================================
 # RESTORE THE NGINX CONFIGURATION

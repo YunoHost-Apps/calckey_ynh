@@ -44,7 +44,7 @@ fi
 #=================================================
 ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
-# Stop bservice before backup, to not loose message in case of failed upgrade and restore
+# Stop service before backup, to not loose message in case of failed upgrade and restore
 ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd --line_match="Stopped"
 
 #=================================================
@@ -120,7 +120,10 @@ ynh_script_progression --message="Upgrading dependencies..." --weight=5
 
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
-ynh_install_extra_app_dependencies --repo="deb https://dl.yarnpkg.com/debian/ stable main" --package="yarn" --key="https://dl.yarnpkg.com/debian/pubkey.gpg"
+
+# REMOVE YARN (upgrade from 13.0.x to 13.1.x)
+ynh_script_progression --message="Removing old version dependency..."
+ynh_secure_remove --file="$final_path/.yarn"
 
 #=================================================
 # NGINX CONFIGURATION
@@ -136,10 +139,12 @@ ynh_add_nginx_config
 ynh_script_progression --message="Building app..."
 
 pushd "$final_path"
-    ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run rebuild
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run migrate
+    corepack enable
+    corepack prepare pnpm@latest --activate
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm clean-all
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm run build
+    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run migrate
 popd
 
 #=================================================
