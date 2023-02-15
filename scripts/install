@@ -26,9 +26,6 @@ ynh_script_progression --message="Installing dependencies... This might take som
 
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 
-ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
-
-
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
