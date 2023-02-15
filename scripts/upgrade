@@ -76,7 +76,6 @@ fi
 ynh_script_progression --message="Upgrading dependencies..." --weight=5
 
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
-ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
 
 # REMOVE YARN (upgrade from 13.0.x to 13.1.x)
 ynh_script_progression --message="Removing old version dependency..."
