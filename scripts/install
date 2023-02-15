@@ -45,6 +45,14 @@ ynh_script_progression --message="Setting up source files..." --weight=3
 ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
+# SECURE FILES AND DIRECTORIES
+#=================================================
+
+# Set permissions to app files
+chmod -R o-rwx "$install_dir"
+chown -R $app:www-data "$install_dir"
+
+#=================================================
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Configuring NGINX web server..." --weight=3
@@ -62,14 +70,6 @@ redis_db=$(ynh_redis_get_free_db)
 ynh_app_setting_set --app="$app" --key=redis_db --value="$redis_db"
 
 ynh_add_config --template="../conf/default.yml" --destination="$install_dir/.config/default.yml"
-
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Set permissions to app files
-chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
 
 #=================================================
 # BUILD APP
