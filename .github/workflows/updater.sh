@@ -17,7 +17,7 @@
 #=================================================
 
 # Fetching information
-current_version=$(cat manifest.tome | jq -j '.version|split("~")[0]')
+current_version=$(cat manifest.toml | jq -j '.version|split("~")[0]')
 repo=$(cat manifest.toml | jq -j '.upstream.code|split("https://github.com/")[1]')
 # Some jq magic is needed, because the latest upstream release is not always the latest version (e.g. security patches for older versions)
 latest_release_json=$(curl --silent "https://codeberg.org/api/v1/repos/calckey/calckey/releases" | jq -r '[.[] | select( .prerelease != true )][0]')
