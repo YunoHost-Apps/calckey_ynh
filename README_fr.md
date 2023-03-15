@@ -6,6 +6,7 @@ It shall NOT be edited by hand.
 # Calckey pour YunoHost
 
 [![Niveau d’intégration](https://dash.yunohost.org/integration/calckey.svg)](https://dash.yunohost.org/appci/app/calckey) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)
+
 [![Installer Calckey avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=calckey)
 
 *[Read this readme in english.](./README.md)*
@@ -29,30 +30,6 @@ Un fork grandement amélioré de Misskey avec une meilleure UI/UX, sécurité, f
 ## Captures d’écran
 
 ![Capture d’écran de Calckey](./doc/screenshots/screenshot-calckey.png)
-
-## Avertissements / informations importantes
-
-### Points importants à lire avant l'installation
-
-- *Calckey* nécessite un domaine racine dédié, par ex. `Calckey.domain.tld`
-- En raison de la dépendance de Cypress, *Calckey* ne fonctionne que sur les machines à processeur 64 bits.
-- *Calckey* peut prendre un certain temps à installer (plus de 30 minutes). Alors prenez un peu de temps et prenez un café.
-- Si l'installation à partir de la ligne de commande, l'utilisation de l'écran est réenregistrée pour éviter la déconnexion. Voir ci-dessous.
-- Après l'installation, la première page peut prendre du temps à charger et peut afficher une erreur de délai d'attente. Donnez-lui le temps de se préparer pour vous. Actualiser la page après 2-3 minutes.
-- Le premier compte créé sera un utilisateur administrateur et disposera de tous les droits d'administrateur.
-
-Utiliser *screen* en cas de déconnexion
-
-``` 
-sudo apt-get install screen
-screen
-sudo yunohost app install https://github.com/YunoHost-Apps/Calckey_ynh.git
-```
-Récupérer après déconnexion :
-```
-screen -d
-screen -r
-```
 
 ## Documentations et ressources
 
