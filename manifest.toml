@@ -41,7 +41,7 @@ ram.runtime = "2G"
 
     [resources.sources.main]
     url = "https://codeberg.org/calckey/calckey/archive/v13.1.4.1.tar.gz"
-    sha256 = "5BD66E8ADE6ABAF205DA6C4AD9A9389719C09CE0BBF672389E1B84AF48AFCBBC"
+    sha256 = "5bd66e8ade6abaf205da6c4ad9a9389719c09ce0bbf672389e1b84af48afcbbc"
 
     [resources.system_user]
 
