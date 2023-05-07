@@ -5,7 +5,7 @@ name = "Calckey"
 description.en = "Fork of Misskey with better UI/UX, security, features"
 description.fr = "Un fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
 
-version = "13.1.4.1~ynh1"
+version = "14.0.0rc~ynh1"
 
 maintainers = ["oufmilo"]
 
@@ -40,8 +40,8 @@ ram.runtime = "2G"
 [resources]
 
     [resources.sources.main]
-    url = "https://codeberg.org/calckey/calckey/archive/v13.1.4.1.tar.gz"
-    sha256 = "5bd66e8ade6abaf205da6c4ad9a9389719c09ce0bbf672389e1b84af48afcbbc"
+    url = "https://codeberg.org/calckey/calckey/archive/v14.0.0-rc.tar.gz"
+    sha256 = "3dc6023c4c816ab3504a8f2c7d2c2b2c908cb58c0cda0821631a314a29d3b0f6"
 
     [resources.system_user]
 
@@ -54,7 +54,7 @@ ram.runtime = "2G"
     main.default = 3020
 
     [resources.apt]
-    packages = "ffmpeg, postgresql, build-essential"
+    packages = "ffmpeg, postgresql, build-essential, curl"
 
     [resources.database]
     type = "postgresql"
