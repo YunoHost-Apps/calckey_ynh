@@ -67,6 +67,8 @@ chown $app:$app "$install_dir/.config/default.yml"
 ynh_script_progression --message="Building app... This will take some time." --weight=15
 
 pushd "$install_dir"
+	curl https://sh.rustup.rs -sSf | ynh_exec_warn_less ynh_exec_as $app sh -s -- -y
+	export PATH="$install_dir/.cargo/bin:$PATH"	
 	ynh_use_nodejs
 	corepack enable
 	corepack prepare pnpm@latest --activate

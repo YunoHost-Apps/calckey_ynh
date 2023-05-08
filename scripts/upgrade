@@ -21,7 +21,7 @@ upgrade_type=$(ynh_check_app_version_changed)
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 
-if ynh_compare_current_package_version --comparison lt --version 12.105.0~ynh1
+if ynh_compare_current_package_version --comparison lt --version 13.0.5~ynh1
 then
 	ynh_die --message="Sorry, this version is not upgradable to the latest version :("
 fi
@@ -96,15 +96,18 @@ ynh_add_nginx_config
 #=================================================
 # BUILD APP
 #=================================================
-ynh_script_progression --message="Building app..."
+ynh_script_progression --message="Installing rust and building app…"
 
 pushd "$install_dir"
-    corepack enable
-    corepack prepare pnpm@latest --activate
-    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm clean-all
-    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
-    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm run build
-    ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run migrate
+	curl https://sh.rustup.rs -sSf | ynh_exec_warn_less ynh_exec_as $app sh -s -- -y
+	export PATH="$install_dir/.cargo/bin:$PATH"
+	ynh_use_nodejs
+	corepack enable
+    	corepack prepare pnpm@latest --activate
+  	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm clean-all
+   	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
+ 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm run build
+   	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run migrate
 popd
 
 #=================================================
