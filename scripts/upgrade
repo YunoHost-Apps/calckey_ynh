@@ -96,7 +96,7 @@ ynh_add_nginx_config
 #=================================================
 # BUILD APP
 #=================================================
-ynh_script_progression --message="Building app..."
+ynh_script_progression --message="Installing rust and building app…"
 
 pushd "$install_dir"
 	curl https://sh.rustup.rs -sSf | ynh_exec_warn_less ynh_exec_as $app sh -s -- -y
