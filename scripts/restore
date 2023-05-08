@@ -38,7 +38,7 @@ ynh_script_progression --message="Reinstalling pnpm + rust..." --weight=1
 
 # Define and install pnpm + rust
 pushd "$install_dir"
-	curl https://sh.rustup.rs -sSf | ynh_exec_warn_less ynh_exec_as $app 'sh -s -- -y'
+	curl https://sh.rustup.rs -sSf | ynh_exec_warn_less ynh_exec_as $app sh -s -- -y
 	export PATH="$install_dir/.cargo/bin:$PATH"	
 	ynh_use_nodejs
 	corepack enable
