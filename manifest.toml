@@ -5,7 +5,7 @@ name = "Calckey"
 description.en = "Fork of Misskey with better UI/UX, security, features"
 description.fr = "Un fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
 
-version = "14.0.0rc~ynh1"
+version = "14.0.0rc2~ynh1"
 
 maintainers = ["oufmilo"]
 
@@ -16,7 +16,7 @@ demo = "https://i.calckey.cloud/"
 code = "https://codeberg.org/calckey/calckey"
 
 [integration]
-yunohost = ">= 11.1.14"
+yunohost = ">= 11.1.19"
 architectures = "all" 
 multi_instance = false
 ldap = "not_relevant" 
@@ -40,8 +40,8 @@ ram.runtime = "2G"
 [resources]
 
     [resources.sources.main]
-    url = "https://codeberg.org/calckey/calckey/archive/v14.0.0-rc.tar.gz"
-    sha256 = "3dc6023c4c816ab3504a8f2c7d2c2b2c908cb58c0cda0821631a314a29d3b0f6"
+    url = "https://codeberg.org/calckey/calckey/archive/v14.0.0-rc2c.tar.gz"
+    sha256 = "8cce26734c67a1c9b360b178127301dbb14b4cc969d3343340873a765e9a4d56"
 
     [resources.system_user]
 
