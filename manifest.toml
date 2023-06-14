@@ -5,7 +5,7 @@ name = "Calckey"
 description.en = "Fork of Misskey with better UI/UX, security, features"
 description.fr = "Un fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
 
-version = "14.0.0rc2c~ynh1"
+version = "14.0.0rc2c~ynh2"
 
 maintainers = ["oufmilo"]
 
