@@ -5,7 +5,7 @@ name = "Calckey"
 description.en = "Fork of Misskey with better UI/UX, security, features"
 description.fr = "Un fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
 
-version = "14.0.0rc~ynh1"
+version = "14.0.0rc3~ynh1"
 
 maintainers = ["oufmilo"]
 
@@ -40,8 +40,8 @@ ram.runtime = "2G"
 [resources]
 
     [resources.sources.main]
-    url = "https://codeberg.org/calckey/calckey/archive/v14.0.0-rc.tar.gz"
-    sha256 = "3dc6023c4c816ab3504a8f2c7d2c2b2c908cb58c0cda0821631a314a29d3b0f6"
+    url = "https://codeberg.org/calckey/calckey/archive/v14.0.0-rc3.tar.gz"
+    sha256 = "844db89913cdc026e390cc69e923c9c63a2e11b2230e36cba8e9642f73d8c059"
 
     [resources.system_user]
 
