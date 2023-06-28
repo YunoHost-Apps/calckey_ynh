@@ -23,7 +23,7 @@ Un fork grandement amélioré de Misskey avec une meilleure UI/UX, sécurité, f
     Calckey ajoute de nombreux changements de qualité de vie et des corrections de bogues pour les utilisateurs et les administrateurs d'instance.
 
 
-**Version incluse :** 14.0.0rc~ynh1
+**Version incluse :** 14.0.0rc3~ynh1
 
 **Démo :** https://i.calckey.cloud/
 
