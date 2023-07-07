@@ -16,7 +16,6 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-
 A greatly enhanced fork of Misskey with better UI/UX, security, features, and more! https://i.calckey.cloud/
 
 
