@@ -3,7 +3,7 @@ packaging_format = 2
 id = "calckey"
 name = "Calckey"
 description.en = "Fork of Misskey with better UI/UX, security, features"
-description.fr = "Un fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
+description.fr = "Fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
 
 version = "14.0.0rc3~ynh1"
 
@@ -16,7 +16,7 @@ demo = "https://i.calckey.cloud/"
 code = "https://codeberg.org/calckey/calckey"
 
 [integration]
-yunohost = ">= 11.1.19"
+yunohost = ">= 11.1.21"
 architectures = "all"
 multi_instance = false
 ldap = "not_relevant"
