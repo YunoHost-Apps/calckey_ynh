@@ -28,6 +28,23 @@ ynh_script_progression --message="Reinstalling dependencies..." --weight=5
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 
 #=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+# Configure redis
+redis_db=$(ynh_redis_get_free_db)
+ynh_app_setting_set --app="$app" --key=redis_db --value="$redis_db"
+
+ynh_add_config --template="../conf/default.yml" --destination="$install_dir/.config/default.yml"
+
+chmod 750 "$install_dir"
+chmod -R o-rwx "$install_dir"
+chown -R $app:www-data "$install_dir"
+chmod 400 "$install_dir/.config/default.yml"
+chown $app:$app "$install_dir/.config/default.yml"
+
+#=================================================
 # REINSTALL PNPM
 #=================================================
 ynh_script_progression --message="Reinstalling pnpm + rust..." --weight=1
