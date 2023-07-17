@@ -9,11 +9,9 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-
 #=================================================
 # CHECK VERSION
 #=================================================
-ynh_script_progression --message="Checking version..."
 
 upgrade_type=$(ynh_check_app_version_changed)
 
@@ -33,11 +31,6 @@ ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
 # Stop service before backup, to not loose message in case of failed upgrade and restore
 ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd --line_match="Stopped"
-
-#=================================================
-# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
-#=================================================
-ynh_script_progression --message="Backing up the app before upgrading (may take a while)..." --weight=1
 
 #=================================================
 # STANDARD UPGRADE STEPS
@@ -141,7 +134,6 @@ yunohost service add $app --description="A interplanetary blogging platform" --l
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="All workers started"
-
 
 #=================================================
 # END OF SCRIPT
