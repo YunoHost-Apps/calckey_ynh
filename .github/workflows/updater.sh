@@ -11,7 +11,7 @@
 
 # Remove this exit command when you are ready to run this Action
 
-exit 1
+# exit 1
 
 #=================================================
 # FETCHING LATEST RELEASE AND ITS ASSETS
