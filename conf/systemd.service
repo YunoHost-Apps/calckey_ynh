@@ -1,5 +1,5 @@
 [Unit]
-Description=Calckey: fork of Misskey
+Description=Firefish: fork of Misskey
 After=network.target
 
 [Service]
