@@ -41,7 +41,7 @@ ram.runtime = "2G"
 
     [resources.sources.main]
     url = "https://git.joinfirefish.org/firefish/firefish/-/archive/v13.1.4.1/firefish-v13.1.4.1.tar.gz"
-    sha256 = "20ca08c1b5fec5c5029a7f85d1a97d19955722e7cbe84c45089bcc7c9bfb8af1"
+    sha256 = "658965f878fb0f5b22a6f29b5c63723f052a64f6b9bd8d9a3da93849231e3e62"
 
     [resources.system_user]
 
