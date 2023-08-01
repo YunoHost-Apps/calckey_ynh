@@ -40,8 +40,8 @@ ram.runtime = "2G"
 [resources]
 
     [resources.sources.main]
-    url = "https://codeberg.org/calckey/calckey/archive/v14.0.0-rc3.tar.gz"
-    sha256 = "844db89913cdc026e390cc69e923c9c63a2e11b2230e36cba8e9642f73d8c059"
+    url = "https://git.joinfirefish.org/firefish/firefish/-/archive/v14.0.0-rc3/firefish-v14.0.0-rc3.tar.gz"
+    sha256 = "628c455a3f7bb5203ff98f3130c75ca168384379ddec20905b98b5e8c97ce285"
 
     [resources.system_user]
 
