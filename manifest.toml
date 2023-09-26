@@ -15,6 +15,10 @@ website = "https://i.calckey.cloud/"
 demo = "https://i.calckey.cloud/"
 code = "https://codeberg.org/calckey/calckey"
 
+[antifeatures]
+deprecated-software.en = "Calckey has been replaced by Firefish, install that new app instead. A migration procedure is being developed for existing instances."
+deprecated-software.fr = "Calckey a été remplacée par Firefish, installez plutôt cette nouvelle application. Une procédure de migration est en cours de développement pour les instances existantes."
+
 [integration]
 yunohost = ">= 11.1.14"
 architectures = "all" 
