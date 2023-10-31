@@ -33,11 +33,15 @@ A greatly enhanced fork of Misskey with better UI/UX, security, features, and mo
 
 ![Screenshot of Calckey](./doc/screenshots/screenshot-calckey.png)
 
+## :red_circle: Antifeatures
+
+- **Upstream not maintained**: Calckey has been replaced by Firefish, install that new app instead. A migration procedure is being developed for existing instances.
+
 ## Documentation and resources
 
 * Official app website: <https://i.calckey.cloud/>
 * Upstream app code repository: <https://codeberg.org/calckey/calckey>
-* YunoHost documentation for this app: <https://yunohost.org/app_calckey>
+* YunoHost Store: <https://apps.yunohost.org/app/calckey>
 * Report a bug: <https://github.com/YunoHost-Apps/calckey_ynh/issues>
 
 ## Developer info
