@@ -95,8 +95,10 @@ pushd "$install_dir"
 	curl https://sh.rustup.rs -sSf | ynh_exec_warn_less ynh_exec_as $app sh -s -- -y
 	export PATH="$install_dir/.cargo/bin:$PATH"
 	ynh_use_nodejs
-	corepack enable
-    	corepack prepare pnpm@latest --activate
+	env $ynh_node_load_PATH corepack enable
+    	env $ynh_node_load_PATH corepack prepare pnpm@latest --activate
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH corepack enable
+    	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH corepack prepare pnpm@latest --activate
   	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm clean-all
    	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
  	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm run build
