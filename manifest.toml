@@ -33,7 +33,6 @@ ram.runtime = "2G"
     [install.domain]
     # this is a generic question - ask strings are automatically handled by Yunohost's core
     type = "domain"
-    full_domain = true
 
     [install.init_main_permission]
     help.en = "If enabled, Calckey will be accessible by people who do not have an account. This can be changed later via the webadmin."
