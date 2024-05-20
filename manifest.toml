@@ -20,12 +20,12 @@ deprecated-software.en = "Calckey has been replaced by Firefish, install that ne
 deprecated-software.fr = "Calckey a été remplacée par Firefish, installez plutôt cette nouvelle application. Une procédure de migration est en cours de développement pour les instances existantes."
 
 [integration]
-yunohost = ">= 11.1.14"
-architectures = "all" 
+yunohost = ">= 11.2.12"
+architectures = "all"
 multi_instance = false
-ldap = "not_relevant" 
-sso = "not_relevant" 
-disk = "50M" 
+ldap = "not_relevant"
+sso = "not_relevant"
+disk = "50M"
 ram.build = "2G"
 ram.runtime = "2G"
 
