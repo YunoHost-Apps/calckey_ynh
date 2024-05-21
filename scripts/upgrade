@@ -10,12 +10,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# CHECK VERSION
-#=================================================
-
-upgrade_type=$(ynh_check_app_version_changed)
-
-#=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 
@@ -54,14 +48,10 @@ fi
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression --message="Upgrading source files..."
 
-if [ "$upgrade_type" == "UPGRADE_APP" ]
-then
-	ynh_script_progression --message="Upgrading source files..."
-
-	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep=".config/default.yml"
-fi
+# Download, check integrity, uncompress and patch the source from app.src
+ynh_setup_source --dest_dir="$install_dir" --keep=".config/default.yml"
 
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
@@ -77,14 +67,6 @@ ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 # REMOVE YARN (upgrade from 13.0.x to 13.1.x)
 ynh_script_progression --message="Removing old version dependency..."
 ynh_secure_remove --file="$install_dir/.yarn"
-
-#=================================================
-# NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
-
-# Create a dedicated NGINX config
-ynh_add_nginx_config
 
 #=================================================
 # BUILD APP
@@ -110,23 +92,14 @@ popd
 #=================================================
 ynh_script_progression --message="Upgrading systemd configuration..." --weight=1
 
+# Create a dedicated NGINX config
+ynh_add_nginx_config
+
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SETUP LOGROTATE
-#=================================================
-ynh_script_progression --message="Upgrading logrotate configuration..." --weight=1
-
 # Use logrotate to manage app-specific logfile(s)
 ynh_use_logrotate --non-append
-
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
 
 yunohost service add $app --description="A interplanetary blogging platform" --log="/var/log/$app/$app.log"
 

@@ -31,7 +31,6 @@ ram.runtime = "2G"
 
 [install]
     [install.domain]
-    # this is a generic question - ask strings are automatically handled by Yunohost's core
     type = "domain"
 
     [install.init_main_permission]
