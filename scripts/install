@@ -64,7 +64,7 @@ pushd "$install_dir"
 	env $ynh_node_load_PATH corepack prepare pnpm@latest --activate
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH corepack enable
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH corepack prepare pnpm@latest --activate
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm install
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH corepack pnpm install
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH NODE_ENV=production pnpm build
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH pnpm run init
 popd
