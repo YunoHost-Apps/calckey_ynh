@@ -33,7 +33,7 @@ A greatly enhanced fork of Misskey with better UI/UX, security, features, and mo
 
 ![Captura de Calckey](./doc/screenshots/screenshot-calckey.png)
 
-## :red_circle: funcionalidades no deseadas
+## :red_circle: Características no deseables
 
 - **Upstream not maintained**: Calckey has been replaced by Firefish, install that new app instead. A migration procedure is being developed for existing instances.
 
