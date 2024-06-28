@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # Calckey for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/calckey.svg)](https://dash.yunohost.org/appci/app/calckey) ![Working status](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)
+[![Integration level](https://dash.yunohost.org/integration/calckey.svg)](https://ci-apps.yunohost.org/ci/apps/calckey/) ![Working status](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)
 
 [![Install Calckey with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=calckey)
 
