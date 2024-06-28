@@ -11,10 +11,6 @@ source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD RESTORATION STEPS
-#=================================================
-
-#=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
 ynh_script_progression --message="Restoring the app main directory..." --weight=1
@@ -51,10 +47,12 @@ chown $app:$app "$install_dir/.config/default.yml"
 #=================================================
 # REINSTALL PNPM
 #=================================================
-ynh_script_progression --message="Reinstalling pnpm..." --weight=1
+ynh_script_progression --message="Reinstalling pnpm + rust..." --weight=1
 
-# Define and install pnpm
+# Define and install pnpm + rust
 pushd "$install_dir"
+	curl https://sh.rustup.rs -sSf | ynh_exec_warn_less ynh_exec_as $app sh -s -- -y
+	export PATH="$install_dir/.cargo/bin:$PATH"	
 	ynh_use_nodejs
 	corepack enable
 	corepack prepare pnpm@latest --activate

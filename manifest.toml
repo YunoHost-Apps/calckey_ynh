@@ -3,9 +3,9 @@ packaging_format = 2
 id = "calckey"
 name = "Calckey"
 description.en = "Fork of Misskey with better UI/UX, security, features"
-description.fr = "Un fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
+description.fr = "Fork de Misskey avec une meilleure interface utilisateur, la sécurité, les fonctionnalités"
 
-version = "13.1.4.1~ynh1"
+version = "14.0.0rc3~ynh1"
 
 maintainers = ["oufmilo"]
 
@@ -43,8 +43,8 @@ ram.runtime = "2G"
 [resources]
 
     [resources.sources.main]
-    url = "https://git.joinfirefish.org/firefish/firefish/-/archive/v13.1.4.1/firefish-v13.1.4.1.tar.gz"
-    sha256 = "658965f878fb0f5b22a6f29b5c63723f052a64f6b9bd8d9a3da93849231e3e62"
+    url = "https://git.joinfirefish.org/firefish/firefish/-/archive/v14.0.0-rc3/firefish-v14.0.0-rc3.tar.gz"
+    sha256 = "628c455a3f7bb5203ff98f3130c75ca168384379ddec20905b98b5e8c97ce285"
 
     [resources.system_user]
 
@@ -57,7 +57,7 @@ ram.runtime = "2G"
     main.default = 3020
 
     [resources.apt]
-    packages = "ffmpeg, postgresql, build-essential"
+    packages = "ffmpeg, postgresql, build-essential, curl"
 
     [resources.database]
     type = "postgresql"
