@@ -57,7 +57,7 @@ ram.runtime = "2G"
     main.default = 3020
 
     [resources.apt]
-    packages = "ffmpeg, postgresql, build-essential"
+    packages = "ffmpeg, postgresql, build-essential, redis-server"
 
     [resources.database]
     type = "postgresql"
