@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Calckey YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/calckey.svg)](https://dash.yunohost.org/appci/app/calckey) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/calckey.svg)](https://ci-apps.yunohost.org/ci/apps/calckey/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)
 
 [![Instalatu Calckey YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=calckey)
 

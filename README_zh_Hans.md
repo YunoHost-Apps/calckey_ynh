@@ -5,7 +5,7 @@
 
 # YunoHost 上的 Calckey
 
-[![集成程度](https://dash.yunohost.org/integration/calckey.svg)](https://dash.yunohost.org/appci/app/calckey) ![工作状态](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/calckey.svg)](https://ci-apps.yunohost.org/ci/apps/calckey/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/calckey.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/calckey.maintain.svg)
 
 [![使用 YunoHost 安装 Calckey](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=calckey)
 
