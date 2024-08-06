@@ -16,7 +16,6 @@
 
 ## 概况
 
-
 A greatly enhanced fork of Misskey with better UI/UX, security, features, and more! https://i.calckey.cloud/
 
 
@@ -25,7 +24,7 @@ A greatly enhanced fork of Misskey with better UI/UX, security, features, and mo
    
 
 
-**分发版本：** 13.1.4.1~ynh1
+**分发版本：** 14.0.0rc3~ynh1
 
 **演示：** <https://i.calckey.cloud/>
 

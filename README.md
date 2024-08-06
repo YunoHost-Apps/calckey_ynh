@@ -16,7 +16,6 @@ It shall NOT be edited by hand.
 
 ## Overview
 
-
 A greatly enhanced fork of Misskey with better UI/UX, security, features, and more! https://i.calckey.cloud/
 
 
@@ -25,7 +24,7 @@ A greatly enhanced fork of Misskey with better UI/UX, security, features, and mo
    
 
 
-**Shipped version:** 13.1.4.1~ynh1
+**Shipped version:** 14.0.0rc3~ynh1
 
 **Demo:** <https://i.calckey.cloud/>
 
